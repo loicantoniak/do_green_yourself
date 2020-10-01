@@ -1,0 +1,57 @@
+easy_admin:
+
+  entities:
+    Comment:
+      class: App\Entity\Comment
+      label: 'un commentaire'
+
+      list:
+        item_permission: 'ROLE_MODER'
+        title: "Les commentaires"
+        sort: ['Date', 'ASC']
+        filters: [{ property: 'Date' },{ property: 'user' }]
+
+        fields: [
+                { property: 'id' },
+                { property: 'user' },
+                { property: 'Date'},
+                { property: 'tutorial'},
+                { property: 'text', sortable: false  },
+                { property: 'parentComment', sortable: false },
+                { property: 'answers', sortable: false }
+                ]
+
+      show:
+        fields: [
+                { property: 'user' },
+                { property: 'user' },
+                { property: 'Date', type: 'datetime'},
+                { property: 'tutorial'},
+                { property: 'text' },
+                { property: 'parentComment' },
+                { property: 'answers' }
+                ]
+
+      new:
+        item_permission: 'ROLE_MODER'
+
+      form:
+        fields:
+          - { type: 'group',icon: 'home', label: 'Informations' ,css_class: 'col-lg-4'}
+          - { property: 'user' }
+          - { property: 'Date' }
+          - { property: 'tutorial' }
+
+          - { type: 'group', icon: 'pencil', label: 'Commentaire', css_class: 'col-lg-8' }
+          - { property: 'text', type: 'text_editor' }
+          - { property: 'parentComment' }
+          - { property: 'answers' }
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+.SiteMap{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+
+.listMap {
+    display: flex;
+    flex-direction: column;
+}

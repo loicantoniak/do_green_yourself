@@ -1,0 +1,53 @@
+easy_admin:
+
+  design:
+    brand_color: '#5CBC72'
+
+    menu:
+      - {label: 'Administration'}
+
+      - label: "Tutoriels"
+        icon: 'clipboard'
+        children:
+          - { entity: Tutorial, label: 'Liste des tutoriels', icon: 'th-list', default: true }
+          - { entity: Tutorial, label: 'Ajouter un tutoriel', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+          - { entity: Step, label: 'Liste des étapes', icon: 'th-list', default: true }
+          - { entity: Step, label: 'Ajouter une étape', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+          - { entity: Grade, label: 'Liste des notes', icon: 'th-list', default: true }
+
+      - label: "Catégories"
+        icon: 'list'
+        children:
+          - { entity: Category, label: 'Liste des catégories', icon: 'th-list' }
+          - { entity: Category, label: 'Ajouter une catégorie', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+
+      - label: "Ingrédients"
+        icon: 'shopping-basket'
+        children:
+          - { entity: Ingredient, label: 'Liste des ingrédients', icon: 'th-list' }
+          - { entity: Ingredient, label: 'Ajouter un ingrédient', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+          - { entity: Need, label: 'Liste des quantités', icon: 'th-list' }
+          - { entity: Need, label: "Ajouter une quantité", icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+
+      - label: "Magasins"
+        icon: 'shopping-cart'
+        children:
+          - { entity: Shop, label: 'Liste des magasins', icon: 'th-list' }
+          - { entity: Shop, label: 'Ajouter un magasin', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+
+      - label: "Tags"
+        icon: 'tag'
+        children:
+          - { entity: Tag, label: 'Liste des tags', icon: 'th-list' }
+          - { entity: Tag, label: 'Ajouter un tag', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+
+
+      - {label: 'Modération'}
+
+      - label: "Utilisateurs"
+        icon: 'users'
+        children:
+          - { entity: User, label: 'Liste des utilisateurs', icon: 'th-list' }
+          - { entity: User, label: 'Ajouter un utilisateur', icon: 'plus', params: {action: 'new' }, permission: 'ROLE_ADMIN'}
+
+      - { entity: Comment, label: 'Commentaires', icon: 'comment' }

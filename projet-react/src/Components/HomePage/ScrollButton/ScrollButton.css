@@ -1,0 +1,11 @@
+button {
+    width: 100%;
+    color: white;
+    background: transparent;
+    border: none;
+    text-align: center;
+}
+
+button:focus {
+    outline:0;
+}

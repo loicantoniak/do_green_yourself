@@ -1,0 +1,30 @@
+.card {
+    width: 292px;
+    height: 25rem;
+    margin: 1rem;
+}
+
+.card h3{
+    text-align: center;
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+.card p {
+    color: grey;
+    font-size: 0.8em;
+}
+
+.card img{
+    height: 250px;
+    min-height: 194px;
+}
+
+.cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5rem;
+}
+

@@ -1,0 +1,47 @@
+easy_admin:
+
+  entities:
+    Ingredient:
+      class: App\Entity\Ingredient
+      label: 'un ingrédient'
+      templates:
+        edit: 'easyAdmin/ingredient/editImage.html.twig'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les ingrédients"
+        sort: ['name', 'ASC']
+        filters: [{ property: 'name' },{ property: 'unit' },{ property: 'essential' }]
+        fields: [
+                { property: 'id' },
+                { property: 'name' },
+                { property: 'unit' },
+                { property: 'essential'},
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/ingredient/imageById.html.twig', type_options: { mapped: false } },
+                { property: 'description'},
+                ]
+
+      show:
+        fields: [
+                { property: 'name' },
+                { property: 'unit' },
+                { property: 'essential'},
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/ingredient/imageById.html.twig', type_options: { mapped: false } },
+                { property: 'description'},
+        ]
+
+      form:
+        fields:
+          - { type: 'group', icon: 'list', label: 'Ingrédient' ,css_class: 'col-lg-6'}
+          - { property: 'name' }
+          - { property: 'illustration', type: file, type_options: { mapped: false } }
+          - { property: 'delete', type: 'checkbox', type_options: { mapped: false } }
+
+          - { type: 'group', icon: 'pencil', label: 'Caractéristiques', css_class: 'col-lg-6' }
+          - { property: 'unit' }
+          - { property: 'essential' }
+          - { property: 'description'}
+
+
+      new:
+        item_permission: 'ROLE_ADMIN'

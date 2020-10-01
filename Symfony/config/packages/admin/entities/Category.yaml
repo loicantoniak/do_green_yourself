@@ -1,0 +1,43 @@
+easy_admin:
+
+  entities:
+    Category:
+      class: App\Entity\Category
+      label: 'une catégorie'
+      templates:
+        edit: 'easyAdmin/category/editImage.html.twig'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les catégories"
+        sort: ['id', 'ASC']
+        filters: [{ property: 'name', label: 'Nom' }]
+        fields: [
+                { property: 'id' },
+                { property: 'name' },
+                { property: 'tutorials' },
+                { property: 'parentCategory' },
+                { property: 'subCategories'},
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/category/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      show:
+        fields:
+          - { property: 'name' }
+          - { property: 'tutorials'}
+          - { property: 'parentCategory'}
+          - { property: 'subCategories' }
+          - { property: 'illustration', type: 'int',  template: 'easyAdmin/category/imageById.html.twig', type_options: { mapped: false } }
+
+      form:
+        fields:
+          - { property: 'name' }
+          - { property: 'parentCategory'}
+          - { property: 'illustration', type: file, type_options: { mapped: false } }
+
+      edit:
+        fields:
+          - { property: 'delete', type: 'checkbox', type_options: { mapped: false } }
+
+      new:
+        item_permission: 'ROLE_ADMIN'

@@ -1,0 +1,22 @@
+easy_admin:
+
+  entities:
+
+    Tag:
+      class: App\Entity\Tag
+      label: 'un tag'
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les tags"
+        sort: ['tag', 'ASC']
+        filters: [{ property: 'tag' }]
+        fields: ['id',
+                 { property: 'tag' },
+                 { property: 'tutorials', sortable: false }]
+
+      form:  # <-- 'form' is applied to both 'new' and 'edit' views
+        fields:
+          - { property: 'tag' }
+
+      new:
+        item_permission: 'ROLE_ADMIN'

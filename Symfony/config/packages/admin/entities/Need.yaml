@@ -1,0 +1,35 @@
+easy_admin:
+
+  entities:
+    Need:
+      class: App\Entity\Need
+      label: 'une quantité'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les quantités des ingrédients"
+        sort: ['id', 'ASC']
+        filters: [{ property: 'tutorial' }]
+        fields: [
+                { property: 'id' },
+                { property: 'tutorial' },
+                { property: 'ingredient'},
+                { property: 'amount' }
+                ]
+
+      show:
+        fields: [
+                { property: 'id' },
+                { property: 'tutorial' },
+                { property: 'ingredient'},
+                { property: 'amount' }
+                ]
+
+      form:
+        fields:
+          - { property: 'tutorial' }
+          - { property: 'ingredient'}
+          - { property: 'amount' }
+
+      new:
+        item_permission: 'ROLE_ADMIN'

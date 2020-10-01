@@ -1,0 +1,60 @@
+.profil-item{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+ 
+.profil-border{
+    border: 3px outset;
+    border-color: rgb(144, 182, 149);
+    border-radius: 30px;
+    height: 30em;
+    width: 50em;
+
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-side{
+    display: flex;
+    flex: 1;
+    margin-left: 1em;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.side-profil{
+    display: flex;
+}
+
+.hello-user{
+    display: flex;
+    justify-content: center;
+    margin-left: 2em;
+}
+
+span{
+    color: #dedede;
+}
+
+.profil-position{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+    .side-profil{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .profil-border{
+        height: 50em;
+    }
+  }

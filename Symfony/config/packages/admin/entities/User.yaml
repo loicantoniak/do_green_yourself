@@ -1,0 +1,92 @@
+easy_admin:
+
+  entities:
+    User:
+      class: App\Entity\User
+      label: 'un utilisateur'
+      templates:
+        edit: 'easyAdmin/user/editImage.html.twig'
+
+      list:
+        item_permission: 'ROLE_MODER'
+        title: "Les utilisateurs"
+        sort: ['name', 'ASC']
+        filters: [{ property: 'name' },{ property: 'postalCode' },{ property: 'city' },{ property: 'country' }]
+        fields: [
+                { property: 'id' }
+                { property: 'name' },
+                { property: 'firstname', sortable: false},
+                { property: 'address', sortable: false},
+                { property: 'postalCode' },
+                { property: 'city' },
+                { property: 'birthDate'},
+                { property: 'country', type: 'country', with_flag : false},
+                { property: 'sex' },
+                { property: 'email', sortable: false }
+                { property: 'roles'},
+                {property: 'reporting' },
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/user/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      show:
+        fields: [
+                { property: 'name' },
+                { property: 'firstname'},
+                { property: 'pseudo' },
+                { property: 'address'},
+                { property: 'postalCode' },
+                { property: 'city' },
+                { property: 'birthDate' },
+                { property: 'country',type: 'country' },
+                { property: 'sex' },
+                { property: 'email', type: 'email' },
+                { property: 'reporting' },
+                { property: 'roles', type: 'array'},
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/user/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      new:
+        item_permission: 'ROLE_ADMIN'
+        fields:
+          - { type: 'group',icon: 'user', label: 'Identité' ,css_class: 'col-lg-3'}
+          - { property: 'name' }
+          - { property: 'firstname'}
+          - { property: 'sex', type: 'choice', type_options: { multiple: false, choices: {'Man': 'M', 'Female': 'F', 'Other': 'O'}} }
+          - { property: 'birthDate', type: 'birthday' }
+          - { property: 'pseudo' }
+          - { property: 'password', type: 'text' }
+          - { property: 'confirmPassword', type: 'text' }
+
+          - { type: 'group',icon: 'home', label: 'Adresse' ,css_class: 'col-lg-4'}
+          - { property: 'address'}
+          - { property: 'postalCode' }
+          - { property: 'city' }
+          - { property: 'country',type: 'country', with_flag : false }
+
+          - { type: 'group',icon: 'envelope', label: 'Autre' ,css_class: 'col-lg-3'}
+          - { property: 'email', type: 'email' }
+          - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'User': 'ROLE_USER', 'Modérator': 'ROLE_MODER', 'Admin': 'ROLE_ADMIN' } } }
+          - { property: 'reporting'}
+
+      edit:
+        fields:
+          - { type: 'group',icon: 'user', label: 'Identité' ,css_class: 'col-lg-3'}
+          - { property: 'name' }
+          - { property: 'firstname'}
+          - { property: 'sex', type: 'choice', type_options: { multiple: false, choices: {'Man': 'M', 'Female': 'F', 'Other': 'O'}} }
+          - { property: 'birthDate', type: 'birthday' }
+          - { property: 'pseudo' }
+
+          - { type: 'group',icon: 'home', label: 'Adresse' ,css_class: 'col-lg-4'}
+          - { property: 'address'}
+          - { property: 'postalCode' }
+          - { property: 'city' }
+          - { property: 'country',type: 'country', with_flag : false }
+
+          - { type: 'group',icon: 'envelope', label: 'Autre' ,css_class: 'col-lg-3'}
+          - { property: 'email', type: 'email' }
+          - { property: 'illustration', type: file, type_options: { mapped: false } }
+          - { property: 'delete', type: 'checkbox', type_options: { mapped: false } }
+          - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'User': 'ROLE_USER', 'Modérator': 'ROLE_MODER', 'Admin': 'ROLE_ADMIN' } } }
+          - { property: 'reporting'}
+

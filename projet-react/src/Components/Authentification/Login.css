@@ -1,0 +1,50 @@
+.buttonCo {
+    background-color: rgb(47, 45, 45);
+    color: white;
+    border: 2px solid;
+    width: 20%;
+    padding: 12px;
+   
+}
+
+.buttonIns {
+    background-color: rgb(47, 45, 45) ;
+    color: white;
+    border-radius: 30px;
+    border: 2px solid;
+    width: 20%;
+    padding: 12px;
+   
+}
+
+.connexion input[type=text], input[type=email], select, textarea {
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.connexion input[type=text], input[type=password], select, textarea {
+    width: 20%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.connexion {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.connexion a {
+    text-decoration: underline;
+    padding: 1rem;
+}

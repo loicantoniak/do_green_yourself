@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+  background-color: #FBFBFB;
+}
+
+#App {
+  font-family: 'Montserrat';
+  height: 100vh;
+}
+
+#page-wrap {
+  overflow: auto;
+}
+
+h1 {
+  margin-top: 1em;
+}
+
+p, h3, h1{
+  font-family: 'Montserrat'
+}
+
+
+

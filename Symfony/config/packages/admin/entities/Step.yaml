@@ -1,0 +1,33 @@
+easy_admin:
+
+  entities:
+    Step:
+      class: App\Entity\Step
+      label: 'une étape'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les étapes des tutoriels"
+        sort: ['id', 'ASC']
+        fields: ['id',
+                 { property: 'tutorial'},
+                 { property: 'number' },
+                 { property: 'text'}
+        ]
+
+      show:
+        fields: [
+        { property: 'id' },
+        { property: 'tutorial'},
+        { property: 'number' },
+        { property: 'text'}]
+
+      form:
+
+        fields:
+          - { property: 'tutorial' }
+          - { property: 'number' }
+          - { property: 'text' }
+
+      new:
+        item_permission: 'ROLE_ADMIN'

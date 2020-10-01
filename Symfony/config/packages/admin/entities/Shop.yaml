@@ -1,0 +1,62 @@
+easy_admin:
+
+  entities:
+    Shop:
+      class: App\Entity\Shop
+      label: 'un magasin'
+      templates:
+        edit: 'easyAdmin/shop/editImage.html.twig'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les magasins"
+        sort: ['name', 'ASC']
+        filters: [{ property: 'name' },{ property: 'postalCode' },{ property: 'city' },{ property: 'country' }]
+        fields: [
+                { property: 'id'},
+                { property: 'name' },
+                { property: 'address', sortable: false },
+                { property: 'postalCode'},
+                { property: 'city' },
+                { property: 'country', type: 'country', with_flag : false},
+                { property: 'phone', sortable: false },
+                { property: 'email', sortable: false },
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/shop/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      show:
+        fields: [
+                { property: 'name' },
+                { property: 'address' },
+                { property: 'postalCode' },
+                { property: 'city' },
+                { property: 'country', type: 'country' },
+                { property: 'phone' },
+                { property: 'email', type: "email" },
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/shop/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      form:
+        fields:
+          - { type: 'group',icon: 'home', label: 'Magasin' ,css_class: 'col-lg-3'}
+          - { property: 'name' }
+
+          - { type: 'group', icon: 'pencil', label: 'Informations principales', css_class: 'col-lg-4' }
+          - { property: 'address' }
+          - { property: 'postalCode' }
+          - { property: 'city' }
+          - { property: 'Country', type: 'country', with_flag : false }
+          - { property: 'phone' }
+          - { property: 'email' }
+
+          - {type: 'group', icon: 'th-list', label: 'Informations secondaires', css_class: 'col-lg-4' }
+          - { property: 'longitude' }
+          - { property: 'latitude' }
+          - { property: 'illustration', type: file, type_options: { mapped: false } }
+
+      edit:
+         fields:
+           - { property: 'delete', type: 'checkbox', type_options: { mapped: false } }
+
+      new:
+        item_permission: 'ROLE_ADMIN'

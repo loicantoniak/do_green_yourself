@@ -1,0 +1,75 @@
+.card {
+    border: none;
+}
+
+.tutoriels{
+    text-align: center;
+    margin: auto;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.tutoriel{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/***************************************/
+/*              DETAILS                */
+/***************************************/
+
+.detailsTuto {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 0 10em;
+}
+
+.detailsTuto img {
+    width: 30em;
+    height: auto;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.detailsTuto p {
+    font-size: 1.2em;
+}
+
+.detailsTuto .author {
+    text-align: end;
+    font-style: italic;
+    font-size: medium;
+}
+
+.detailsTuto h2 {
+    text-align: center;
+}
+
+.detailsTuto .linkCategory{
+    display: flex;
+    flex-direction: row;
+    color: grey;
+    font-style: italic;
+}
+
+.detailsTuto .linkCategory a {
+    margin-right: 1em;
+}
+
+.detailsTuto .tags {
+    display: flex;
+    flex-direction: row;
+    color: grey;
+    font-style: italic;
+}
+
+.detailsTuto .tags p{
+    margin-right: 1em;
+}

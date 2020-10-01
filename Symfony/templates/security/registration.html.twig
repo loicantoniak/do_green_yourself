@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 200px 200px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <h1>Inscription sur le site</h1>
+
+        {{ form_start(form)}}
+        {{ form_row(form.name) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.pseudo) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.confirmPassword) }}
+        {{ form_row(form.address) }}
+        {{ form_row(form.postal_code) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.country) }}
+        {{ form_row(form.birth_date) }}
+        {{ form_row(form.sex) }}
+        {{ form_row(form.agreeTerms) }}
+        <button type="submit" class="btn btn-primary">Inscription</button>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

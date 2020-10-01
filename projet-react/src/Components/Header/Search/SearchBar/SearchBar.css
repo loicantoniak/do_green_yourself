@@ -1,0 +1,44 @@
+.search-bar input{
+    font-size: 2rem;
+    font-style: italic;
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    width: 150vh;
+}
+
+.search-container{
+    display: flex;
+    size: 100vh;
+    justify-content: center;
+}
+
+.search{
+    display: flex;
+    position: absolute;
+    height: 10vh;
+    width: 150vh;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    background-color: transparent;
+    z-index: 200;
+    margin-top: 5vh;
+    list-style: none;
+    flex-direction: row;
+    border-bottom: 0.2em solid;
+    border-color: black;
+}
+
+#search-input {
+    border-color: transparent;
+
+}
+
+::placeholder {
+    color: black;
+}
+

@@ -1,0 +1,176 @@
+/***************************************/
+/*              HEADER                 */
+/***************************************/
+
+.containe-background{
+    display: flex;
+    flex-direction: row;
+    background-color: #588068;
+}
+
+.background-text{
+    display: flex;
+    min-height: 100vh;
+    max-width: 100vh;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.background-image{
+    background: url("../../Images/background.jpg") no-repeat; 
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    background-size: cover;    
+}
+
+.scroll-test{
+    z-index: 100;
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.img-logo{
+    display: flex;
+    flex: 5;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    max-width: 18em;
+    max-height: 19em;
+    margin-top: 10%;
+}
+
+.background h1 {
+    margin: 0 0 10% 0;
+    font-size: 4em;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 0 10% 0;
+}
+
+.description {
+    margin : 0 10%;
+}
+
+.description p {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 1.2em;
+}
+
+.description p:last-child {
+    margin-top: 10%;
+    font-size: 1.2em;
+
+}
+
+@media screen and (max-width: 1250px){
+    .containe-background {
+        display: flex;
+        flex-direction: column;
+    }
+    .background-image{
+        min-height: 100vh;
+    }
+    .background-text{
+        max-width: none;
+    }
+}
+
+/***************************************/
+/*              CATEGORY               */
+/***************************************/
+
+
+.categoryItems {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    margin: 2rem;
+}
+
+/* Définit la position de la div categoryContaintSize */
+.divCategoryIllustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    height: 100%;
+}
+
+.img-thumbnail, .img-fluid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Définit la taille de la div */
+/* Elle est plus petite que l'image pour ne pas que le titre déborde */
+.categoryContaintSize{
+    height: 80%;
+    width: 90%;
+}
+
+.CategoryContaint{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Définit la position du texte de category name */
+.categoryNameContaint, .categoryDetailContaint {
+    position: absolute;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    height: 80%;
+    width: 90%;
+    justify-content: flex-end; /* positionnement horizontal */
+    align-items: flex-end; /* positionnment vertical */
+}
+
+/* Définit la position du texte des sous-catégories */
+.categoryName, .categoryDetail, .subCategories {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end; /* positionnement horizontal */
+    align-items: flex-end; /* positionnment vertical */
+}
+
+.categoryDetail, .subCategories {
+    display: flex;
+    flex-direction: column;
+}
+
+/***************************************/
+/*              ABOUT                  */
+/***************************************/
+
+.about {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+}
+
+.about h1 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.about h3 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}

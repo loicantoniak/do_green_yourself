@@ -1,0 +1,18 @@
+.imageShop {
+    width: 10em;
+    height: auto;
+}
+
+.infoShop {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoShop h1 {
+    font-size: 1.2em;
+}
+
+.infoShop p {
+    margin: 0;
+    font-size: 1em;
+}

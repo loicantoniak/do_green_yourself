@@ -1,0 +1,61 @@
+easy_admin:
+
+  entities:
+    Tutorial:
+      class: App\Entity\Tutorial
+      label: 'un tutoriel'
+      templates:
+        edit: 'easyAdmin/tutorial/editImage.html.twig'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les tutoriels"
+        sort: ['id', 'ASC']
+        filters: [{ property: 'title' },{ property: 'averageGrade' },{ property: 'status' },{ property: 'date' }]
+        fields: [
+                { property: 'id' },
+                { property: 'title' },
+                { property: 'postUser'},
+                { property: 'averageGrade'},
+                { property: 'status' },
+                { property: 'date'},
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/tutorial/imageById.html.twig', type_options: { mapped: false }, sortable: false }
+                ]
+
+      show:
+        fields: [
+                { property: 'id' },
+                { property: 'title' },
+                { property: 'description', type: 'raw'},
+                { property: 'preparationTime' },
+                { property: 'averageGrade' },
+                { property: 'status' },
+                { property: 'date'},
+                { property: 'postUser'},
+                { property: 'steps'},
+                { property: 'categories' },
+                { property: 'tags' },
+                { property: 'illustration', type: 'int',  template: 'easyAdmin/tutorial/imageById.html.twig', type_options: { mapped: false } }
+                ]
+
+      form:
+        fields:
+          - { type: 'group',icon: 'home', label: 'Informations principales' ,css_class: 'col-lg-6'}
+          - { property: 'title' }
+          - { property: 'description', type: 'text_editor' }
+          - { property: 'preparationTime' }
+          - { property: 'illustration', type: file, type_options: { mapped: false } }
+          - { property: 'delete', type: 'checkbox', type_options: { mapped: false } }
+
+          - { type: 'group', icon: 'pencil', label: 'Informations secondaires', css_class: 'col-lg-6' }
+          - { property: 'date'}
+          - { property: 'status', type: 'choice', type_options: { multiple: false, choices: {'Being edited': 'Being edited','Waiting for validation': 'Waiting for validation','Online': 'Online', 'Offline': 'Offline'}} }
+          - { property: 'postUser'}
+          - { property: 'tags' }
+          - { property: 'categories' }
+
+      new:
+        item_permission: 'ROLE_ADMIN'
+
+
+

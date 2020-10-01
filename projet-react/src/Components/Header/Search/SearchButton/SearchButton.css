@@ -1,0 +1,11 @@
+.search-button {  
+    background-color: transparent;
+    border-color: transparent;
+    margin-left: 9em;
+    z-index: 200;
+}
+
+.search-button:focus {
+    outline: none;
+    
+}   

@@ -1,0 +1,34 @@
+easy_admin:
+
+  entities:
+    Grade:
+      class: App\Entity\Grade
+      label: 'une note'
+
+      list:
+        item_permission: 'ROLE_ADMIN'
+        title: "Les notes des tutoriels"
+        sort: ['id', 'ASC']
+        fields: [
+                { property: 'id'},
+                { property: 'tutorial'},
+                { property: 'grade' },
+                { property: 'user' }
+                ]
+
+      show:
+        fields: [
+                { property: 'id'},
+                { property: 'tutorial'},
+                { property: 'grade' },
+                { property: 'user' }
+                ]
+
+      form:
+        fields:
+          - { property: 'tutorial'}
+          - { property: 'grade' }
+          - { property: 'user' }
+
+      new:
+        item_permission: 'ROLE_ADMIN'
